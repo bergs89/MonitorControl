@@ -49,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     style: self.settingsPaneStyle,
     animated: true
   )
-
+  
   func applicationDidFinishLaunching(_: Notification) {
     app = self
     self.subscribeEventListeners()
@@ -66,6 +66,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.configure(firstrun: true)
     DisplayManager.shared.createGammaActivityEnforcer()
     self.updaterController.startUpdater()
+    
+    //if #available(macOS 10.15, *) {
+      //let brightnessModel = BrightnessModel()
+    //}
+    
+    if #available(macOS 10.15, *) {
+        if let button = statusItem.button {
+            button.image = nil // Remove default image
+            let customView = BrightnessStatusItemView(frame: button.bounds)
+            button.addSubview(customView)
+        }
+    }
+
   }
 
   @objc func quitClicked(_: AnyObject) {
