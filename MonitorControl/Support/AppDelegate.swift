@@ -12,7 +12,7 @@ import Sparkle
 
 class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem: NSStatusItem = {
-    let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    let item = NSStatusBar.system.statusItem(withLength: 20)
     item.behavior = .removalAllowed
     return item
   }()
