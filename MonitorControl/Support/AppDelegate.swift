@@ -27,6 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var audioPlayer: AVAudioPlayer?
   let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
 
+  var brightnessManager: BrightnessManager?
+
   var settingsPaneStyle: Settings.Style {
     if !DEBUG_MACOS10, #available(macOS 11.0, *) {
       return Settings.Style.toolbarItems
@@ -64,6 +66,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //if #available(macOS 10.15, *) {
       //let brightnessModel = BrightnessModel()
     //}
+    // Initialize your brightness manager (using your modified BrightIntosh version)
+    brightnessManager = BrightnessManager(isExtraBrightnessAllowed: { _ in return true })
     
     if #available(macOS 10.15, *) {
         if let button = statusItem.button {

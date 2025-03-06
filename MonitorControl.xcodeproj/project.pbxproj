@@ -27,6 +27,7 @@
 		7B836E932D79A44F00D5D620 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E922D79A44E00D5D620 /* Utils.swift */; };
 		7B836E952D79A48200D5D620 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E942D79A48200D5D620 /* Constants.swift */; };
 		7B836E992D79A89200D5D620 /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E982D79A89200D5D620 /* Vars.swift */; };
+		7B836E9C2D79B10C00D5D620 /* ModernSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 7B836E9B2D79B10C00D5D620 /* ModernSlider */; };
 		8C1741852707B91100E88D53 /* InternetAccessPolicy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1741842707B91100E88D53 /* InternetAccessPolicy.plist */; };
 		8C1741882707B91F00E88D53 /* InternetAccessPolicy.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C17418A2707B91F00E88D53 /* InternetAccessPolicy.strings */; };
 		AA062E8A26C9A039007E628C /* DisplaysPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA062E8926C9A039007E628C /* DisplaysPrefsViewController.swift */; };
@@ -204,6 +205,7 @@
 				6CD35F53264FFFC6001F1344 /* SimplyCoreAudio in Frameworks */,
 				6CD35F5626500008001F1344 /* MediaKeyTap in Frameworks */,
 				AA9AE86F26B5BF3D00B6CA65 /* OSD.framework in Frameworks */,
+				7B836E9C2D79B10C00D5D620 /* ModernSlider in Frameworks */,
 				AAD7DD342CAFF3D90062822F /* Settings in Frameworks */,
 				AADB625A26BC196900DFFAA5 /* DisplayServices.framework in Frameworks */,
 			);
@@ -412,6 +414,7 @@
 				AA44E702270377C200E06865 /* KeyboardShortcuts */,
 				AA70817B27046B9800CC5625 /* Sparkle */,
 				AAD7DD332CAFF3D90062822F /* Settings */,
+				7B836E9B2D79B10C00D5D620 /* ModernSlider */,
 			);
 			productName = MonitorControl.OSX;
 			productReference = 56754EAB1D9A4016007BCDC5 /* MonitorControl.app */;
@@ -492,6 +495,7 @@
 				6CD35F5A2650003F001F1344 /* XCRemoteSwiftPackageReference "Settings" */,
 				AA44E701270377C200E06865 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				AA70817A27046B9800CC5625 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				7B836E9A2D79B10C00D5D620 /* XCRemoteSwiftPackageReference "ModernSlider" */,
 			);
 			productRefGroup = 56754EAC1D9A4016007BCDC5 /* Products */;
 			projectDirPath = "";
@@ -1075,6 +1079,14 @@
 				kind = branch;
 			};
 		};
+		7B836E9A2D79B10C00D5D620 /* XCRemoteSwiftPackageReference "ModernSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arjun-dureja/ModernSlider";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		AA44E701270377C200E06865 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
@@ -1103,6 +1115,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6CD35F5426500008001F1344 /* XCRemoteSwiftPackageReference "MediaKeyTap" */;
 			productName = MediaKeyTap;
+		};
+		7B836E9B2D79B10C00D5D620 /* ModernSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B836E9A2D79B10C00D5D620 /* XCRemoteSwiftPackageReference "ModernSlider" */;
+			productName = ModernSlider;
 		};
 		AA44E702270377C200E06865 /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;
