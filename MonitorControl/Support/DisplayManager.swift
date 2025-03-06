@@ -180,32 +180,15 @@ class DisplayManager {
         let appleDisplay = AppleDisplay(id, name: name, vendorNumber: vendorNumber, modelNumber: modelNumber, serialNumber: serialNumber, isVirtual: isVirtual, isDummy: isDummy)
         os_log("Apple display found - %{public}@", type: .info, "ID: \(appleDisplay.identifier), Name: \(appleDisplay.name) (Vendor: \(appleDisplay.vendorNumber ?? 0), Model: \(appleDisplay.modelNumber ?? 0))")
         self.addDisplay(display: appleDisplay)
-      } else {
-        let otherDisplay = OtherDisplay(id, name: name, vendorNumber: vendorNumber, modelNumber: modelNumber, serialNumber: serialNumber, isVirtual: isVirtual, isDummy: isDummy)
-        os_log("Other display found - %{public}@", type: .info, "ID: \(otherDisplay.identifier), Name: \(otherDisplay.name) (Vendor: \(otherDisplay.vendorNumber ?? 0), Model: \(otherDisplay.modelNumber ?? 0))")
-        self.addDisplay(display: otherDisplay)
       }
     }
   }
 
   func setupOtherDisplays(firstrun: Bool = false) {
-    for otherDisplay in self.getOtherDisplays() {
-      for command in [Command.audioSpeakerVolume, Command.contrast] where !otherDisplay.readPrefAsBool(key: .unavailableDDC, for: command) && !otherDisplay.isSw() {
-        otherDisplay.setupCurrentAndMaxValues(command: command, firstrun: firstrun)
-      }
-      if (!otherDisplay.isSw() && !otherDisplay.readPrefAsBool(key: .unavailableDDC, for: .brightness)) || otherDisplay.isSw() {
-        otherDisplay.setupCurrentAndMaxValues(command: .brightness, firstrun: firstrun)
-        otherDisplay.brightnessSyncSourceValue = otherDisplay.readPrefAsFloat(for: .brightness)
-      }
-    }
+    
   }
 
   func restoreOtherDisplays() {
-    for otherDisplay in self.getDdcCapableDisplays() {
-      for command in [Command.contrast, Command.brightness] where !otherDisplay.readPrefAsBool(key: .unavailableDDC, for: command) {
-        otherDisplay.restoreDDCSettingsToDisplay(command: command)
-      }
-    }
   }
 
   func normalizedName(_ name: String) -> String {
@@ -237,7 +220,7 @@ class DisplayManager {
   }
 
   func getOtherDisplays() -> [OtherDisplay] {
-    self.displays.compactMap { $0 as? OtherDisplay }
+    return []
   }
 
   func getAllDisplays() -> [Display] {
@@ -245,11 +228,7 @@ class DisplayManager {
   }
 
   func getDdcCapableDisplays() -> [OtherDisplay] {
-    self.displays.compactMap { display -> OtherDisplay? in
-      if let otherDisplay = display as? OtherDisplay, !otherDisplay.isSw() {
-        return otherDisplay
-      } else { return nil }
-    }
+    return []
   }
 
   func getAppleDisplays() -> [AppleDisplay] {

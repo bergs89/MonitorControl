@@ -3,7 +3,6 @@
 import AVFoundation
 import Cocoa
 import Foundation
-import MediaKeyTap
 import os.log
 import ServiceManagement
 import Settings
@@ -16,8 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     item.behavior = .removalAllowed
     return item
   }()
-  var mediaKeyTap = MediaKeyTapManager()
-  var keyboardShortcuts = KeyboardShortcutsManager()
   let coreAudio = SimplyCoreAudio()
   var accessibilityObserver: NSObjectProtocol!
   var statusItemObserver: NSObjectProtocol!
@@ -42,7 +39,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     panes: [
       mainPrefsVc!,
       menuslidersPrefsVc!,
-      keyboardPrefsVc!,
       displaysPrefsVc!,
       aboutPrefsVc!,
     ],
@@ -56,8 +52,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.showSafeModeAlertIfNeeded()
     if !prefs.bool(forKey: PrefKey.appAlreadyLaunched.rawValue) {
       self.showOnboardingWindow()
-    } else {
-      self.checkPermissions()
     }
     self.setPrefsBuildNumber()
     self.setDefaultPrefs()
@@ -132,7 +126,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     DisplayManager.shared.resetSwBrightnessForAllDisplays(noPrefSave: true)
     CGDisplayRestoreColorSyncSettings()
     self.reconfigureID += 1
-    self.updateMediaKeyTap()
+    // self.updateMediaKeyTap()
     os_log("Bumping reconfigureID to %{public}@", type: .info, String(self.reconfigureID))
     _ = DisplayManager.shared.destroyAllShades()
     if self.sleepID == 0 {
@@ -153,11 +147,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     DisplayManager.shared.gammaInterferenceCounter = 0
     DisplayManager.shared.configureDisplays()
     DisplayManager.shared.addDisplayCounterSuffixes()
-    DisplayManager.shared.updateArm64AVServices()
+    // DisplayManager.shared.updateArm64AVServices()
     if firstrun && prefs.integer(forKey: PrefKey.startupAction.rawValue) != StartupAction.write.rawValue {
       DisplayManager.shared.resetSwBrightnessForAllDisplays(prefsOnly: true)
     }
-    DisplayManager.shared.setupOtherDisplays(firstrun: firstrun)
     self.updateMenusAndKeys()
     if !firstrun || prefs.integer(forKey: PrefKey.startupAction.rawValue) == StartupAction.write.rawValue {
       if !prefs.bool(forKey: PrefKey.disableCombinedBrightness.rawValue) {
@@ -170,14 +163,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func updateMenusAndKeys() {
     menu.updateMenus()
-    self.updateMediaKeyTap()
+    // self.updateMediaKeyTap()
   }
 
   func checkPermissions(firstAsk: Bool = false) {
     let permissionsRequired: Bool = [KeyboardVolume.media.rawValue, KeyboardVolume.both.rawValue].contains(prefs.integer(forKey: PrefKey.keyboardVolume.rawValue)) || [KeyboardBrightness.media.rawValue, KeyboardBrightness.both.rawValue].contains(prefs.integer(forKey: PrefKey.keyboardBrightness.rawValue))
-    if !MediaKeyTapManager.readPrivileges(prompt: false), permissionsRequired {
-      MediaKeyTapManager.acquirePrivileges(firstAsk: firstAsk)
-    }
+    //if !MediaKeyTapManager.readPrivileges(prompt: false), permissionsRequired {
+    //  MediaKeyTapManager.acquirePrivileges(firstAsk: firstAsk)
   }
 
   private func subscribeEventListeners() {
@@ -187,14 +179,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.willSleepNotification, object: nil)
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.didWakeNotification, object: nil)
-    _ = DistributedNotificationCenter.default().addObserver(forName: NSNotification.Name(rawValue: NSNotification.Name.accessibilityApi.rawValue), object: nil, queue: nil) { _ in DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { self.updateMediaKeyTap() } } // listen for accessibility status changes
     self.statusItemObserver = statusItem.observe(\.isVisible, options: [.old, .new]) { _, _ in self.statusItemVisibilityChanged() }
   }
 
   @objc private func sleepNotification() {
     self.sleepID += 1
     os_log("Sleeping with sleep %{public}@", type: .info, String(self.sleepID))
-    self.updateMediaKeyTap()
+    //self.updateMediaKeyTap()
   }
 
   @objc private func wakeNotification() {
@@ -221,7 +212,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.job(start: true)
       }
       self.startupActionWriteRepeatAfterSober()
-      self.updateMediaKeyTap()
+      //self.updateMediaKeyTap()
     }
   }
 
@@ -279,7 +270,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func handleListenForChanged() {
     self.checkPermissions()
-    self.updateMediaKeyTap()
+    // self.updateMediaKeyTap()
   }
 
   func settingsReset() {
@@ -293,7 +284,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     app.updateStatusItemVisibility(true)
     self.setDefaultPrefs()
     self.checkPermissions()
-    self.updateMediaKeyTap()
+    // self.updateMediaKeyTap()
     self.configure(firstrun: true)
   }
 
@@ -302,12 +293,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       os_log("Default output device changed to “%{public}@”.", type: .info, defaultDevice.name)
       os_log("Can device set its own volume? %{public}@", type: .info, defaultDevice.canSetVirtualMainVolume(scope: .output).description)
     }
-    self.updateMediaKeyTap()
+    // self.updateMediaKeyTap()
   }
 
   func updateMediaKeyTap() {
-    MediaKeyTap.useAlternateBrightnessKeys = !prefs.bool(forKey: PrefKey.disableAltBrightnessKeys.rawValue)
-    self.mediaKeyTap.updateMediaKeyTap()
+    // MediaKeyTap.useAlternateBrightnessKeys = !prefs.bool(forKey: PrefKey.disableAltBrightnessKeys.rawValue)
+      // self.mediaKeyTap.updateMediaKeyTap()
   }
 
   func setStartAtLogin(enabled: Bool) {

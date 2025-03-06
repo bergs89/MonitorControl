@@ -21,7 +21,6 @@ class MenuHandler: NSMenu, NSMenuDelegate {
 
   func menuWillOpen(_: NSMenu) {
     self.updateMenuRelevantDisplay()
-    app.keyboardShortcuts.disengage()
   }
 
   func closeMenu() {
@@ -40,7 +39,7 @@ class MenuHandler: NSMenu, NSMenuDelegate {
     if !prefs.bool(forKey: PrefKey.hideAppleFromMenu.rawValue) {
       displays.append(contentsOf: DisplayManager.shared.getAppleDisplays())
     }
-    displays.append(contentsOf: DisplayManager.shared.getOtherDisplays())
+    // displays.append(contentsOf: DisplayManager.shared.getOtherDisplays())
     let relevant = prefs.integer(forKey: PrefKey.multiSliders.rawValue) == MultiSliders.relevant.rawValue
     let combine = prefs.integer(forKey: PrefKey.multiSliders.rawValue) == MultiSliders.combine.rawValue
     let numOfDisplays = displays.filter { !$0.isDummy }.count
@@ -167,15 +166,15 @@ class MenuHandler: NSMenu, NSMenuDelegate {
     let monitorSubMenu: NSMenu = asSubMenu ? NSMenu() : self
     var addedSliderHandlers: [SliderHandler] = []
     display.sliderHandler[.audioSpeakerVolume] = nil
-    if let otherDisplay = display as? OtherDisplay, !otherDisplay.isSw(), !display.readPrefAsBool(key: .unavailableDDC, for: .audioSpeakerVolume), !prefs.bool(forKey: PrefKey.hideVolume.rawValue) {
-      let title = NSLocalizedString("Volume", comment: "Shown in menu")
-      addedSliderHandlers.append(self.setupMenuSliderHandler(command: .audioSpeakerVolume, display: display, title: title))
-    }
+    //if let otherDisplay = display as? OtherDisplay, !otherDisplay.isSw(), !display.readPrefAsBool(key: .unavailableDDC, for: .audioSpeakerVolume), !prefs.bool(forKey: PrefKey.hideVolume.rawValue) {
+      //let title = NSLocalizedString("Volume", comment: "Shown in menu")
+      //addedSliderHandlers.append(self.setupMenuSliderHandler(command: .audioSpeakerVolume, display: display, title: title))
+   // }
     display.sliderHandler[.contrast] = nil
-    if let otherDisplay = display as? OtherDisplay, !otherDisplay.isSw(), !display.readPrefAsBool(key: .unavailableDDC, for: .contrast), prefs.bool(forKey: PrefKey.showContrast.rawValue) {
-      let title = NSLocalizedString("Contrast", comment: "Shown in menu")
-      addedSliderHandlers.append(self.setupMenuSliderHandler(command: .contrast, display: display, title: title))
-    }
+    //if let otherDisplay = display as? OtherDisplay, !otherDisplay.isSw(), !display.readPrefAsBool(key: .unavailableDDC, for: .contrast), prefs.bool(forKey: PrefKey.showContrast.rawValue) {
+      //let title = NSLocalizedString("Contrast", comment: "Shown in menu")
+      //ddedSliderHandlers.append(self.setupMenuSliderHandler(command: .contrast, display: display, title: title))
+    //}
     display.sliderHandler[.brightness] = nil
     if !display.readPrefAsBool(key: .unavailableDDC, for: .brightness), !prefs.bool(forKey: PrefKey.hideBrightness.rawValue) {
       let title = NSLocalizedString("Brightness", comment: "Shown in menu")
