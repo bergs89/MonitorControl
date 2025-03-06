@@ -17,7 +17,7 @@ class BrightnessStatusItemView: NSView {
     var scrollAccumulator: CGFloat = 0.0
     let brightnessStep: CGFloat = 0.0075
     let scrollStepThreshold: CGFloat = 5.0
-
+    
     // Haptic feedback properties
     private var lastHapticFeedbackTime: Date = .distantPast
     private let hapticFeedbackInterval: TimeInterval = 0.025
@@ -133,9 +133,9 @@ class BrightnessStatusItemView: NSView {
     // MARK: - Scroll Events
     override func scrollWheel(with event: NSEvent) {
         // Accumulate scroll delta.
-        let revertScroll = -1
-        let delta = CGFloat(Float(event.scrollingDeltaY) * Float(revertScroll))
-      
+        let scrollMultiplier: CGFloat = Vars.shared.naturalScrolling ? 1.0 : -1.0
+        let delta = -1 * event.scrollingDeltaY * scrollMultiplier
+        
         scrollAccumulator += delta
         
         // Increase brightness.

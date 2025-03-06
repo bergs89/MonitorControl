@@ -25,28 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var jobRunning = false
   var startupActionWriteCounter: Int = 0
   var audioPlayer: AVAudioPlayer?
-  let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: UpdaterDelegate(), userDriverDelegate: nil)
 
   var brightnessManager: BrightnessManager?
-
-  var settingsPaneStyle: Settings.Style {
-    if !DEBUG_MACOS10, #available(macOS 11.0, *) {
-      return Settings.Style.toolbarItems
-    } else {
-      return Settings.Style.segmentedControl
-    }
-  }
-
-  lazy var settingsWindowController: SettingsWindowController = .init(
-    panes: [
-      mainPrefsVc!,
-      menuslidersPrefsVc!,
-      displaysPrefsVc!,
-      aboutPrefsVc!,
-    ],
-    style: self.settingsPaneStyle,
-    animated: true
-  )
   
   func applicationDidFinishLaunching(_: Notification) {
     app = self
@@ -61,7 +41,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     CGDisplayRegisterReconfigurationCallback({ _, _, _ in app.displayReconfigured() }, nil)
     self.configure(firstrun: true)
     DisplayManager.shared.createGammaActivityEnforcer()
-    self.updaterController.startUpdater()
     
     //if #available(macOS 10.15, *) {
       //let brightnessModel = BrightnessModel()
@@ -85,16 +64,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
       NSApplication.shared.terminate(self)
     }
-  }
-
-  @objc func prefsClicked(_: AnyObject) {
-    os_log("Settings clicked", type: .info)
-    self.settingsWindowController.show()
-  }
-
-  func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
-    app.prefsClicked(self)
-    return true
   }
 
   func applicationWillTerminate(_: Notification) {
@@ -378,5 +347,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     statusItemVisibilityChangedByUser = false
     statusItem.isVisible = visible
     statusItemVisibilityChangedByUser = true
+  }
+  
+  @objc func toggleLaunchAtLogin(_ sender: NSMenuItem) {
+      // Toggle the launch at login property.
+      Vars.shared.launchAtLogin.toggle()
+      // Update the menu item checkmark to reflect the new state.
+      sender.state = Vars.shared.launchAtLogin ? .on : .off
+  }
+  
+  @objc func showAbout(_ sender: Any?) {
+      NSApp.orderFrontStandardAboutPanel(nil)
+  }
+  
+  @objc func toggleNaturalScrolling(_ sender: NSMenuItem) {
+      Vars.shared.naturalScrolling.toggle()
+      sender.state = Vars.shared.naturalScrolling ? .on : .off
+  }
+  
+  @objc func openDisplaySettings(_ sender: Any?) {
+      if let url = URL(string: "x-apple.systempreferences:com.apple.preference.displays") {
+          NSWorkspace.shared.open(url)
+      }
   }
 }

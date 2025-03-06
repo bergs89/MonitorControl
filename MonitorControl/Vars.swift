@@ -87,6 +87,18 @@ final class Vars {
     }
     
     private var listeners: [String: [()->()]] = [:]
+  
+    public var naturalScrolling: Bool = {
+        if let value = UserDefaults.standard.object(forKey: "naturalScrolling") as? Bool {
+            return value
+        }
+        return true // or true if you want natural scrolling enabled by default
+    }() {
+        didSet {
+            UserDefaults.standard.set(naturalScrolling, forKey: "naturalScrolling")
+            callListeners(setting: "naturalScrolling")
+        }
+    }
     
     init() {
         // Load launch at login status

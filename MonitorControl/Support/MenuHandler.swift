@@ -11,36 +11,84 @@ struct ExtraBrightnessSliderView: View {
     @State private var brightness: Double = Double(Vars.shared.brightness)
     
     var body: some View {
-        VStack(spacing: 0) {
-            Text("Extra Brightness")
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Boost")
               .font(.system(size: 13, weight: .bold))
               .foregroundColor(.primary)
               .frame(maxWidth: .infinity, alignment: .leading)
               .padding(.top, 12)
               .offset(x: 16)
             ModernSlider(
-              "Boost",
-              systemImage: "sun.max.fill", // Provide a system image name
-                sliderWidth: 180,
-                sliderHeight: 20,
-                value: Binding(
-                    get: { brightness },
-                    set: { newValue in
-                        brightness = newValue
-                        Vars.shared.brightness = Float(newValue)
-                        // Activate extra brightness when above the default value (1.0)
-                        Vars.shared.brightintoshActive = (newValue > 1.0)
-                        app.brightnessManager?.brightnessTechnique?.adjustBrightness()
-                    }
-                ),
-                in: 1.0...1.3,
-                onChangeEnd: { _ in
-                    // Optionally, add feedback (e.g. a sound) when the slider adjustment ends.
-                }
+              systemImage: "sun.max.fill",
+              sliderWidth: 280,
+              sliderHeight: 20,
+              value: Binding(
+                  get: { brightness },
+                  set: { newValue in
+                      brightness = newValue
+                      Vars.shared.brightness = Float(newValue)
+                      // Activate extra brightness when above the default value (1.0)
+                      Vars.shared.brightintoshActive = (newValue > 1.0)
+                      app.brightnessManager?.brightnessTechnique?.adjustBrightness()
+                  }
+              ),
+              in: 1.0...1.25,
+              onChangeEnd: { _ in }
             )
         }
         .padding(.horizontal, 20)
-        .padding(.vertical, 0)
+        .padding(.vertical, 10)
+    }
+}
+
+// MARK: - DisplayBrightnessSliderView
+/// A SwiftUI view for controlling a display's brightness using ModernSlider.
+struct DisplayBrightnessSliderView: View {
+    @State var brightness: Double
+    var display: Display
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            // Show a header using the display's friendly name if available.
+            Text(display.readPrefAsString(key: .friendlyName).isEmpty ? display.name : display.readPrefAsString(key: .friendlyName))
+              .font(.system(size: 13, weight: .bold))
+              .foregroundColor(.primary)
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .padding(.top, 16)
+              .offset(x: 16)
+            ModernSlider(
+              systemImage: "sun.max.fill",
+              sliderWidth: 280,
+              sliderHeight: 20,
+              value: Binding(
+                get: {
+                        if let appleDisplay = display as? AppleDisplay {
+                            return Double(appleDisplay.getBrightness())
+                        } else if let otherDisplay = display as? OtherDisplay {
+                          if let ddcValues = otherDisplay.readDDCValues(for: .brightness, tries: 3, minReplyDelay: nil) {
+                              // Normalize the value between 0 and 1.
+                              return Double(ddcValues.current) / Double(ddcValues.max)
+                          }
+                          return brightness
+                        }
+                        return brightness
+                    },
+                set: { newValue in
+                      brightness = newValue
+                      if let appleDisplay = display as? AppleDisplay {
+                          _ = appleDisplay.setBrightness(Float(newValue))
+                      } else if let otherDisplay = display as? OtherDisplay {
+                          otherDisplay.writeDDCValues(command: .brightness, value: otherDisplay.convValueToDDC(for: .brightness, from: Float(newValue)))
+                          otherDisplay.savePref(Float(newValue), for: .brightness)
+                      }
+                  }
+              ),
+              in: 0...1,
+              onChangeEnd: { _ in }
+            )
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 10)
     }
 }
 
@@ -108,9 +156,8 @@ class MenuHandler: NSMenu, NSMenuDelegate {
         self.addBrightnessExtras()
         
         self.addItem(NSMenuItem.separator())
-
-      
-        // ----- Add Default Menu Options (Text-based: Settings, Updates, Quit) -----
+        
+        // ----- Add Default Menu Options (Text-based: Settings, Quit) -----
         self.addDefaultMenuOptions()
     }
     
@@ -123,16 +170,58 @@ class MenuHandler: NSMenu, NSMenuDelegate {
         let brightnessItem = NSMenuItem(title: "", action: nil, keyEquivalent: "")
         let sliderHostingView = NSHostingView(rootView: ExtraBrightnessSliderView())
         // Adjust the frame as needed.
-        sliderHostingView.frame = NSRect(x: 0, y: 0, width: 220, height: 50)
+        sliderHostingView.frame = NSRect(x: 0, y: 0, width: 305, height: 60)
         brightnessItem.view = sliderHostingView
         self.addItem(brightnessItem)
     }
     
-    // MARK: - Removed Toggle and NSSlider Handlers
-    // The previous methods for handling toggleExtraBrightness and brightnessSliderChanged have been removed
-    // since the SwiftUI ModernSlider now controls extra brightness directly.
+    // MARK: - Update Display Menu for Brightness using ModernSlider
+    func updateDisplayMenu(display: Display, asSubMenu: Bool, numOfDisplays: Int) {
+        os_log("Adding menu items for display %{public}@", type: .info, "\(display.identifier)")
+        let monitorSubMenu: NSMenu = asSubMenu ? NSMenu() : self
+        
+        // Use a ModernSlider-based SwiftUI view for brightness control.
+        if !display.readPrefAsBool(key: .unavailableDDC, for: .brightness),
+           !prefs.bool(forKey: PrefKey.hideBrightness.rawValue) {
+            
+            let sliderItem = NSMenuItem(title: "", action: nil, keyEquivalent: "")
+            let initialBrightness: Double = {
+                if let appleDisplay = display as? AppleDisplay {
+                    return Double(appleDisplay.getAppleBrightness())
+                } else if let otherDisplay = display as? OtherDisplay {
+                    return Double(otherDisplay.setupSliderCurrentValue(command: .brightness))
+                }
+                return 0.5
+            }()
+            let brightnessView = DisplayBrightnessSliderView(brightness: initialBrightness, display: display)
+            let hostingView = NSHostingView(rootView: brightnessView)
+            hostingView.frame = NSRect(x: 0, y: 0, width: 305, height: 60)
+            sliderItem.view = hostingView
+            
+            if asSubMenu {
+                let headerTitle = display.readPrefAsString(key: .friendlyName).isEmpty ? display.name : display.readPrefAsString(key: .friendlyName)
+                let monitorMenuItem = NSMenuItem(title: headerTitle, action: nil, keyEquivalent: "")
+                monitorMenuItem.submenu = NSMenu()
+                monitorMenuItem.submenu?.addItem(sliderItem)
+                self.insertItem(monitorMenuItem, at: 0)
+            } else {
+                self.insertItem(sliderItem, at: 0)
+            }
+        }
+    }
     
-    // MARK: - Existing MenuHandler Functions
+    func addCombinedDisplayMenuBlock() {
+        if let sliderHandler = self.combinedSliderHandler[.audioSpeakerVolume] {
+            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
+        }
+        if let sliderHandler = self.combinedSliderHandler[.contrast] {
+            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
+        }
+        if let sliderHandler = self.combinedSliderHandler[.brightness] {
+            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
+        }
+    }
+    
     func addSliderItem(monitorSubMenu: NSMenu, sliderHandler: SliderHandler) {
         let item = NSMenuItem()
         item.view = sliderHandler.view
@@ -225,41 +314,6 @@ class MenuHandler: NSMenu, NSMenuDelegate {
         self.appendMenuHeader(friendlyName: blockName, monitorSubMenu: monitorSubMenu, asSubMenu: asSubMenu, numOfDisplays: numOfDisplays)
     }
     
-    func addCombinedDisplayMenuBlock() {
-        if let sliderHandler = self.combinedSliderHandler[.audioSpeakerVolume] {
-            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
-        }
-        if let sliderHandler = self.combinedSliderHandler[.contrast] {
-            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
-        }
-        if let sliderHandler = self.combinedSliderHandler[.brightness] {
-            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
-        }
-    }
-    
-    func updateDisplayMenu(display: Display, asSubMenu: Bool, numOfDisplays: Int) {
-        os_log("Adding menu items for display %{public}@", type: .info, "\(display.identifier)")
-        let monitorSubMenu: NSMenu = asSubMenu ? NSMenu() : self
-        var addedSliderHandlers: [SliderHandler] = []
-        display.sliderHandler[.audioSpeakerVolume] = nil
-        // Uncomment and adjust for volume slider if needed.
-        display.sliderHandler[.contrast] = nil
-        if !display.readPrefAsBool(key: .unavailableDDC, for: .brightness), !prefs.bool(forKey: PrefKey.hideBrightness.rawValue) {
-            let title = NSLocalizedString("Brightness", comment: "Shown in menu")
-            addedSliderHandlers.append(self.setupMenuSliderHandler(command: .brightness, display: display, title: title))
-        }
-        if prefs.integer(forKey: PrefKey.multiSliders.rawValue) != MultiSliders.combine.rawValue {
-            self.addDisplayMenuBlock(addedSliderHandlers: addedSliderHandlers,
-                                     blockName: (display.readPrefAsString(key: .friendlyName) != "" ? display.readPrefAsString(key: .friendlyName) : display.name),
-                                     monitorSubMenu: monitorSubMenu,
-                                     numOfDisplays: numOfDisplays,
-                                     asSubMenu: asSubMenu)
-        }
-        if addedSliderHandlers.count > 0, prefs.integer(forKey: PrefKey.menuIcon.rawValue) == MenuIcon.sliderOnly.rawValue {
-            app.updateStatusItemVisibility(true)
-        }
-    }
-    
     private func appendMenuHeader(friendlyName: String, monitorSubMenu: NSMenu, asSubMenu: Bool, numOfDisplays: Int) {
         let monitorMenuItem = NSMenuItem()
         if asSubMenu {
@@ -288,15 +342,33 @@ class MenuHandler: NSMenu, NSMenuDelegate {
         if app.macOS10() {
             self.insertItem(NSMenuItem.separator(), at: self.items.count)
         }
-        self.insertItem(withTitle: NSLocalizedString("Settings…", comment: "Shown in menu"),
-                        action: #selector(app.prefsClicked),
-                        keyEquivalent: ",",
+      
+      // Display Settings menu item.
+        self.insertItem(withTitle: NSLocalizedString("Display Settings...", comment: "Open Display Settings"),
+                        action: #selector(app.openDisplaySettings(_:)),
+                        keyEquivalent: "",
                         at: self.items.count)
-        // let updateItem = NSMenuItem(title: NSLocalizedString("Check for updates…", comment: "Shown in menu"),
-        //                            action: #selector(app.updaterController.checkForUpdates(_:)),
-        //                            keyEquivalent: "")
-        //updateItem.target = app.updaterController
-        //self.insertItem(updateItem, at: self.items.count)
+      
+        self.addItem(NSMenuItem.separator())
+      
+        // Natural Scrolling menu item.
+        self.insertItem(withTitle: NSLocalizedString("Natural Scrolling", comment: "Toggle natural scrolling for brightness adjustment"),
+                         action: #selector(app.toggleNaturalScrolling(_:)),
+                         keyEquivalent: "",
+                        at: self.items.count)
+      
+        self.insertItem(withTitle: NSLocalizedString("Launch at Login", comment: "Shown in menu"),
+                        action: #selector(app.toggleLaunchAtLogin(_:)),
+                        keyEquivalent: "",
+                        at: self.items.count)
+      
+      self.addItem(NSMenuItem.separator())
+      
+        self.insertItem(withTitle: NSLocalizedString("About", comment: "Shown in menu"),
+                        action: #selector(app.showAbout(_:)),
+                        keyEquivalent: "",
+                        at: self.items.count)
+        
         self.insertItem(withTitle: NSLocalizedString("Quit", comment: "Shown in menu"),
                         action: #selector(app.quitClicked),
                         keyEquivalent: "q",
