@@ -1,5 +1,5 @@
 //
-//  Settings.swift
+//  Vars.swift
 //  BrightIntosh
 //
 //  Created by Niklas Rousset on 23.09.23.
@@ -9,8 +9,8 @@ import Foundation
 import ServiceManagement
 
 
-final class Settings {
-    static let shared: Settings = Settings()
+final class Vars {
+    static let shared: Vars = Vars()
     
     public var ignoreAppTransaction = false
     

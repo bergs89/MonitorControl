@@ -12,7 +12,7 @@ import Cocoa
 func getXDRDisplays() -> [NSScreen] {
     var xdrScreens: [NSScreen] = []
     for screen in NSScreen.screens {
-        if ((isBuiltInScreen(screen: screen) && isDeviceSupported()) || (externalXdrDisplays.contains(screen.localizedName) && !Settings.shared.brightIntoshOnlyOnBuiltIn)) {
+        if ((isBuiltInScreen(screen: screen) && isDeviceSupported()) || (externalXdrDisplays.contains(screen.localizedName) && !Vars.shared.brightIntoshOnlyOnBuiltIn)) {
             xdrScreens.append(screen)
         }
     }

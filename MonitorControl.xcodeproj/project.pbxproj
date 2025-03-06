@@ -20,6 +20,13 @@
 		6CDA0FCF26485A8300F52125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDA0FCD26485A8300F52125 /* Main.storyboard */; };
 		7B836D692D7760EE00D5D620 /* BrightnessStatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836D682D7760EE00D5D620 /* BrightnessStatusItemView.swift */; };
 		7B836D7D2D77793000D5D620 /* BrightnessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836D7C2D77793000D5D620 /* BrightnessModel.swift */; };
+		7B836E052D79A26400D5D620 /* BrightnessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E032D79A26400D5D620 /* BrightnessManager.swift */; };
+		7B836E062D79A26400D5D620 /* BrightnessTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E042D79A26400D5D620 /* BrightnessTechnique.swift */; };
+		7B836E8F2D79A2E700D5D620 /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E8E2D79A2E700D5D620 /* OverlayWindow.swift */; };
+		7B836E912D79A40300D5D620 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E902D79A40300D5D620 /* Overlay.swift */; };
+		7B836E932D79A44F00D5D620 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E922D79A44E00D5D620 /* Utils.swift */; };
+		7B836E952D79A48200D5D620 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E942D79A48200D5D620 /* Constants.swift */; };
+		7B836E992D79A89200D5D620 /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836E982D79A89200D5D620 /* Vars.swift */; };
 		8C1741852707B91100E88D53 /* InternetAccessPolicy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1741842707B91100E88D53 /* InternetAccessPolicy.plist */; };
 		8C1741882707B91F00E88D53 /* InternetAccessPolicy.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C17418A2707B91F00E88D53 /* InternetAccessPolicy.strings */; };
 		AA062E8A26C9A039007E628C /* DisplaysPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA062E8926C9A039007E628C /* DisplaysPrefsViewController.swift */; };
@@ -95,6 +102,13 @@
 		6CF93A782707981300BA219D /* MonitorControlDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonitorControlDebug.entitlements; sourceTree = "<group>"; };
 		7B836D682D7760EE00D5D620 /* BrightnessStatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessStatusItemView.swift; sourceTree = "<group>"; };
 		7B836D7C2D77793000D5D620 /* BrightnessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessModel.swift; sourceTree = "<group>"; };
+		7B836E032D79A26400D5D620 /* BrightnessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessManager.swift; sourceTree = "<group>"; };
+		7B836E042D79A26400D5D620 /* BrightnessTechnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessTechnique.swift; sourceTree = "<group>"; };
+		7B836E8E2D79A2E700D5D620 /* OverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindow.swift; sourceTree = "<group>"; };
+		7B836E902D79A40300D5D620 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
+		7B836E922D79A44E00D5D620 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		7B836E942D79A48200D5D620 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7B836E982D79A89200D5D620 /* Vars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		8C1741842707B91100E88D53 /* InternetAccessPolicy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InternetAccessPolicy.plist; sourceTree = "<group>"; };
 		8C1741892707B91F00E88D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
 		8C17418B2707B92200E88D53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InternetAccessPolicy.strings"; sourceTree = "<group>"; };
@@ -249,6 +263,13 @@
 		56754EAD1D9A4016007BCDC5 /* MonitorControl */ = {
 			isa = PBXGroup;
 			children = (
+				7B836E982D79A89200D5D620 /* Vars.swift */,
+				7B836E942D79A48200D5D620 /* Constants.swift */,
+				7B836E922D79A44E00D5D620 /* Utils.swift */,
+				7B836E902D79A40300D5D620 /* Overlay.swift */,
+				7B836E8E2D79A2E700D5D620 /* OverlayWindow.swift */,
+				7B836E032D79A26400D5D620 /* BrightnessManager.swift */,
+				7B836E042D79A26400D5D620 /* BrightnessTechnique.swift */,
 				7B836D7C2D77793000D5D620 /* BrightnessModel.swift */,
 				7B836D682D7760EE00D5D620 /* BrightnessStatusItemView.swift */,
 				6CF93A782707981300BA219D /* MonitorControlDebug.entitlements */,
@@ -613,13 +634,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5314C426EBF5170041D178 /* PrefKey.swift in Sources */,
+				7B836E912D79A40300D5D620 /* Overlay.swift in Sources */,
 				56754EAF1D9A4016007BCDC5 /* main.swift in Sources */,
 				AA062E8A26C9A039007E628C /* DisplaysPrefsViewController.swift in Sources */,
 				AA473EB126DFF8DE0063A181 /* Command.swift in Sources */,
+				7B836E932D79A44F00D5D620 /* Utils.swift in Sources */,
 				6CC260F6256AD8F900613714 /* Preferences+Extension.swift in Sources */,
 				AA99521926FE49A300612E07 /* MenuHandler.swift in Sources */,
 				AA665A5D26C5892800FEF2C1 /* AboutPrefsViewController.swift in Sources */,
+				7B836E952D79A48200D5D620 /* Constants.swift in Sources */,
 				6CBFE27C23DB27A200D1BC41 /* AppleDisplay.swift in Sources */,
+				7B836E8F2D79A2E700D5D620 /* OverlayWindow.swift in Sources */,
 				AA062E8E26CA7BE5007E628C /* DisplaysPrefsCellView.swift in Sources */,
 				FE4E0896249D584C003A50BB /* OSDUtils.swift in Sources */,
 				6CBFE27A23DB266000D1BC41 /* Display.swift in Sources */,
@@ -633,6 +658,9 @@
 				28D1DDF2227FBE71004CB494 /* NSScreen+Extension.swift in Sources */,
 				AA99521726FE25AB00612E07 /* AppDelegate.swift in Sources */,
 				F01B069F228221B7008E64DB /* SliderHandler.swift in Sources */,
+				7B836E052D79A26400D5D620 /* BrightnessManager.swift in Sources */,
+				7B836E992D79A89200D5D620 /* Vars.swift in Sources */,
+				7B836E062D79A26400D5D620 /* BrightnessTechnique.swift in Sources */,
 				AACE5E2327050C63006C2A48 /* NSNotification+Extension.swift in Sources */,
 				AA25F6CF26E680510087F3A2 /* MenuslidersPrefsViewController.swift in Sources */,
 				AA4398A926DD55DA00943F16 /* IntelDDC.swift in Sources */,
@@ -869,11 +897,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MonitorControl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 4.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = app.monitorcontrol.MonitorControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -907,11 +936,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MonitorControl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 4.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = app.monitorcontrol.MonitorControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
