@@ -104,12 +104,6 @@
 		7B836E942D79A48200D5D620 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B836E982D79A89200D5D620 /* Vars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		7B836ECB2D79BA6100D5D620 /* SliderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHandler.swift; sourceTree = "<group>"; };
-		7BFC61972D7B4355003FE023 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
-		7BFC61982D7B4355003FE023 /* DDCControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCControl.swift; sourceTree = "<group>"; };
-		7BFC61992D7B4355003FE023 /* AppleNativeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleNativeControl.swift; sourceTree = "<group>"; };
-		7BFC619A2D7B4355003FE023 /* GammaControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GammaControl.swift; sourceTree = "<group>"; };
-		7BFC619B2D7B4355003FE023 /* NetworkControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControl.swift; sourceTree = "<group>"; };
-		7BFC619C2D7B4355003FE023 /* DDCCTLControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCCTLControl.swift; sourceTree = "<group>"; };
 		7BFC619F2D7B51F6003FE023 /* DisplaysPrefsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaysPrefsCellView.swift; sourceTree = "<group>"; };
 		7BFC61A02D7B51F6003FE023 /* DisplaysPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaysPrefsViewController.swift; sourceTree = "<group>"; };
 		7BFC61AA2D7B52E2003FE023 /* MenuslidersPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuslidersPrefsViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +271,6 @@
 				28D1DDEB227FB8E9004CB494 /* Extensions */,
 				F01B0687228221B6008E64DB /* UI */,
 				F0445D3620023D5B0025AE82 /* View Controllers */,
-				7BFC619D2D7B4355003FE023 /* Control */,
 			);
 			path = MonitorControl;
 			sourceTree = "<group>";
@@ -290,19 +283,6 @@
 				F03A8DF11FFBAA6F0034DC27 /* OtherDisplay.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		7BFC619D2D7B4355003FE023 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				7BFC61972D7B4355003FE023 /* Control.swift */,
-				7BFC61982D7B4355003FE023 /* DDCControl.swift */,
-				7BFC61992D7B4355003FE023 /* AppleNativeControl.swift */,
-				7BFC619A2D7B4355003FE023 /* GammaControl.swift */,
-				7BFC619B2D7B4355003FE023 /* NetworkControl.swift */,
-				7BFC619C2D7B4355003FE023 /* DDCCTLControl.swift */,
-			);
-			path = Control;
 			sourceTree = "<group>";
 		};
 		AA9D231226EE0B25007E22E7 /* Enums */ = {
