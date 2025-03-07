@@ -2,6 +2,7 @@
 
 import AVFoundation
 import Cocoa
+import Foundation
 import os.log
 import ServiceManagement
 import Settings
@@ -30,7 +31,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.subscribeEventListeners()
     self.showSafeModeAlertIfNeeded()
     if !prefs.bool(forKey: PrefKey.appAlreadyLaunched.rawValue) {
-      self.showOnboardingWindow()
     }
     self.setPrefsBuildNumber()
     self.setDefaultPrefs()
@@ -277,12 +277,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       alert.informativeText = NSLocalizedString("Shift was pressed during launch. MonitorControl started in safe mode. Default settings are reloaded, DDC read is blocked.", comment: "Shown in the alert dialog")
       alert.runModal()
     }
-  }
-
-  private func showOnboardingWindow() {
-    onboardingVc?.showWindow(self)
-    onboardingVc?.window?.center()
-    NSApp.activate(ignoringOtherApps: true)
   }
   
   private func statusItemVisibilityChanged() {

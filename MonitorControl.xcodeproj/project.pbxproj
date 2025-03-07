@@ -29,17 +29,16 @@
 		7B836ECC2D79BA6100D5D620 /* SliderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836ECB2D79BA6100D5D620 /* SliderHandler.swift */; };
 		7BFC61932D7B2446003FE023 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFC61922D7B2446003FE023 /* LaunchAtLogin */; };
 		7BFC61962D7B4122003FE023 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFC61952D7B4122003FE023 /* Settings */; };
+		7BFC61A52D7B51F6003FE023 /* DisplaysPrefsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC619F2D7B51F6003FE023 /* DisplaysPrefsCellView.swift */; };
+		7BFC61A62D7B51F6003FE023 /* DisplaysPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC61A02D7B51F6003FE023 /* DisplaysPrefsViewController.swift */; };
+		7BFC61AB2D7B52E2003FE023 /* MenuslidersPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC61AA2D7B52E2003FE023 /* MenuslidersPrefsViewController.swift */; };
 		8C1741852707B91100E88D53 /* InternetAccessPolicy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1741842707B91100E88D53 /* InternetAccessPolicy.plist */; };
 		8C1741882707B91F00E88D53 /* InternetAccessPolicy.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C17418A2707B91F00E88D53 /* InternetAccessPolicy.strings */; };
-		AA062E8A26C9A039007E628C /* DisplaysPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA062E8926C9A039007E628C /* DisplaysPrefsViewController.swift */; };
-		AA062E8E26CA7BE5007E628C /* DisplaysPrefsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA062E8D26CA7BE5007E628C /* DisplaysPrefsCellView.swift */; };
 		AA16139B26BE772E00DCF027 /* Arm64DDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16139A26BE772E00DCF027 /* Arm64DDC.swift */; };
-		AA25F6CF26E680510087F3A2 /* MenuslidersPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA25F6CE26E680510087F3A2 /* MenuslidersPrefsViewController.swift */; };
 		AA3B4A2826AE103C00B74CD2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA3B4A2726AE103C00B74CD2 /* README.md */; };
 		AA4398A926DD55DA00943F16 /* IntelDDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4398A826DD55DA00943F16 /* IntelDDC.swift */; };
 		AA473EB126DFF8DE0063A181 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA473EB026DFF8DE0063A181 /* Command.swift */; };
 		AA5314C426EBF5170041D178 /* PrefKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5314C326EBF5170041D178 /* PrefKey.swift */; };
-		AA665A5D26C5892800FEF2C1 /* AboutPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665A5C26C5892800FEF2C1 /* AboutPrefsViewController.swift */; };
 		AA99521726FE25AB00612E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99521626FE25AB00612E07 /* AppDelegate.swift */; };
 		AA99521926FE49A300612E07 /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99521826FE49A300612E07 /* MenuHandler.swift */; };
 		AA9AE86F26B5BF3D00B6CA65 /* OSD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9AE86E26B5BF3D00B6CA65 /* OSD.framework */; };
@@ -55,10 +54,8 @@
 		AADB625A26BC196900DFFAA5 /* DisplayServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADB625926BC196900DFFAA5 /* DisplayServices.framework */; };
 		F01B0699228221B7008E64DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F01B0680228221B6008E64DB /* Localizable.strings */; };
 		F03A8DF21FFBAA6F0034DC27 /* OtherDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A8DF11FFBAA6F0034DC27 /* OtherDisplay.swift */; };
-		F0445D3820023E710025AE82 /* MainPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0445D3720023E710025AE82 /* MainPrefsViewController.swift */; };
 		F06792EA200A73460066C438 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06792E9200A73460066C438 /* main.swift */; };
 		F06792F6200A745F0066C438 /* MonitorControlHelper.app in [Login] Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = F06792E7200A73460066C438 /* MonitorControlHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F0A489C4279C71B200BEDFD6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A489C3279C71B200BEDFD6 /* OnboardingViewController.swift */; };
 		FE4E0896249D584C003A50BB /* OSDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E0895249D584C003A50BB /* OSDUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +110,9 @@
 		7BFC619A2D7B4355003FE023 /* GammaControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GammaControl.swift; sourceTree = "<group>"; };
 		7BFC619B2D7B4355003FE023 /* NetworkControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControl.swift; sourceTree = "<group>"; };
 		7BFC619C2D7B4355003FE023 /* DDCCTLControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCCTLControl.swift; sourceTree = "<group>"; };
+		7BFC619F2D7B51F6003FE023 /* DisplaysPrefsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaysPrefsCellView.swift; sourceTree = "<group>"; };
+		7BFC61A02D7B51F6003FE023 /* DisplaysPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaysPrefsViewController.swift; sourceTree = "<group>"; };
+		7BFC61AA2D7B52E2003FE023 /* MenuslidersPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuslidersPrefsViewController.swift; sourceTree = "<group>"; };
 		8C1741842707B91100E88D53 /* InternetAccessPolicy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InternetAccessPolicy.plist; sourceTree = "<group>"; };
 		8C1741892707B91F00E88D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
 		8C17418B2707B92200E88D53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InternetAccessPolicy.strings"; sourceTree = "<group>"; };
@@ -124,15 +124,11 @@
 		8C1741912707B92900E88D53 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
 		8C1741932707B92A00E88D53 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
 		8C1741972707B92E00E88D53 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
-		AA062E8926C9A039007E628C /* DisplaysPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaysPrefsViewController.swift; sourceTree = "<group>"; };
-		AA062E8D26CA7BE5007E628C /* DisplaysPrefsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaysPrefsCellView.swift; sourceTree = "<group>"; };
 		AA16139A26BE772E00DCF027 /* Arm64DDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arm64DDC.swift; sourceTree = "<group>"; };
-		AA25F6CE26E680510087F3A2 /* MenuslidersPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuslidersPrefsViewController.swift; sourceTree = "<group>"; };
 		AA3B4A2726AE103C00B74CD2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA4398A826DD55DA00943F16 /* IntelDDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelDDC.swift; sourceTree = "<group>"; };
 		AA473EB026DFF8DE0063A181 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		AA5314C326EBF5170041D178 /* PrefKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefKey.swift; sourceTree = "<group>"; };
-		AA665A5C26C5892800FEF2C1 /* AboutPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPrefsViewController.swift; sourceTree = "<group>"; };
 		AA90101E27C56A0E00CC1DF7 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Main.strings; sourceTree = "<group>"; };
 		AA90101F27C56A0E00CC1DF7 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
 		AA90102027C56A0E00CC1DF7 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -183,12 +179,10 @@
 		F01B0685228221B6008E64DB /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F01B0686228221B6008E64DB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F03A8DF11FFBAA6F0034DC27 /* OtherDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDisplay.swift; sourceTree = "<group>"; };
-		F0445D3720023E710025AE82 /* MainPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPrefsViewController.swift; sourceTree = "<group>"; };
 		F06792E7200A73460066C438 /* MonitorControlHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitorControlHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06792E9200A73460066C438 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F06792F0200A73470066C438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F06792F1200A73470066C438 /* MonitorControlHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonitorControlHelper.entitlements; sourceTree = "<group>"; };
-		F0A489C3279C71B200BEDFD6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FB5DB28E2AD54C4600306223 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
 		FB5DB28F2AD54C4600306223 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InternetAccessPolicy.strings"; sourceTree = "<group>"; };
 		FB5DB2902AD54C4600306223 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -382,11 +376,9 @@
 		F0A489C1279C718400BEDFD6 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				F0445D3720023E710025AE82 /* MainPrefsViewController.swift */,
-				AA25F6CE26E680510087F3A2 /* MenuslidersPrefsViewController.swift */,
-				AA062E8926C9A039007E628C /* DisplaysPrefsViewController.swift */,
-				AA062E8D26CA7BE5007E628C /* DisplaysPrefsCellView.swift */,
-				AA665A5C26C5892800FEF2C1 /* AboutPrefsViewController.swift */,
+				7BFC619F2D7B51F6003FE023 /* DisplaysPrefsCellView.swift */,
+				7BFC61A02D7B51F6003FE023 /* DisplaysPrefsViewController.swift */,
+				7BFC61AA2D7B52E2003FE023 /* MenuslidersPrefsViewController.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -394,7 +386,6 @@
 		F0A489C2279C719200BEDFD6 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				F0A489C3279C71B200BEDFD6 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -645,32 +636,29 @@
 				AA5314C426EBF5170041D178 /* PrefKey.swift in Sources */,
 				7B836E912D79A40300D5D620 /* Overlay.swift in Sources */,
 				56754EAF1D9A4016007BCDC5 /* main.swift in Sources */,
-				AA062E8A26C9A039007E628C /* DisplaysPrefsViewController.swift in Sources */,
 				AA473EB126DFF8DE0063A181 /* Command.swift in Sources */,
 				7B836E932D79A44F00D5D620 /* Utils.swift in Sources */,
 				6CC260F6256AD8F900613714 /* Preferences+Extension.swift in Sources */,
 				AA99521926FE49A300612E07 /* MenuHandler.swift in Sources */,
-				AA665A5D26C5892800FEF2C1 /* AboutPrefsViewController.swift in Sources */,
 				7B836E952D79A48200D5D620 /* Constants.swift in Sources */,
 				6CBFE27C23DB27A200D1BC41 /* AppleDisplay.swift in Sources */,
 				7B836E8F2D79A2E700D5D620 /* OverlayWindow.swift in Sources */,
-				AA062E8E26CA7BE5007E628C /* DisplaysPrefsCellView.swift in Sources */,
 				FE4E0896249D584C003A50BB /* OSDUtils.swift in Sources */,
 				6CBFE27A23DB266000D1BC41 /* Display.swift in Sources */,
+				7BFC61AB2D7B52E2003FE023 /* MenuslidersPrefsViewController.swift in Sources */,
 				7B836ECC2D79BA6100D5D620 /* SliderHandler.swift in Sources */,
 				F03A8DF21FFBAA6F0034DC27 /* OtherDisplay.swift in Sources */,
 				7B836D692D7760EE00D5D620 /* BrightnessStatusItemView.swift in Sources */,
+				7BFC61A52D7B51F6003FE023 /* DisplaysPrefsCellView.swift in Sources */,
+				7BFC61A62D7B51F6003FE023 /* DisplaysPrefsViewController.swift in Sources */,
 				7B836D7D2D77793000D5D620 /* BrightnessModel.swift in Sources */,
-				F0A489C4279C71B200BEDFD6 /* OnboardingViewController.swift in Sources */,
 				AA16139B26BE772E00DCF027 /* Arm64DDC.swift in Sources */,
-				F0445D3820023E710025AE82 /* MainPrefsViewController.swift in Sources */,
 				28D1DDF2227FBE71004CB494 /* NSScreen+Extension.swift in Sources */,
 				AA99521726FE25AB00612E07 /* AppDelegate.swift in Sources */,
 				7B836E052D79A26400D5D620 /* BrightnessManager.swift in Sources */,
 				7B836E992D79A89200D5D620 /* Vars.swift in Sources */,
 				7B836E062D79A26400D5D620 /* BrightnessTechnique.swift in Sources */,
 				AACE5E2327050C63006C2A48 /* NSNotification+Extension.swift in Sources */,
-				AA25F6CF26E680510087F3A2 /* MenuslidersPrefsViewController.swift in Sources */,
 				AA4398A926DD55DA00943F16 /* IntelDDC.swift in Sources */,
 				6C85EFDA22C941B000227EA1 /* DisplayManager.swift in Sources */,
 			);
