@@ -344,7 +344,7 @@ class MenuHandler: NSMenu, NSMenuDelegate {
         }
       
       // Display Settings menu item.
-        self.insertItem(withTitle: NSLocalizedString("Display Settings...", comment: "Open Display Settings"),
+        self.insertItem(withTitle: NSLocalizedString("Displays Settings...", comment: "Open Display Settings"),
                         action: #selector(app.openDisplaySettings(_:)),
                         keyEquivalent: "",
                         at: self.items.count)
