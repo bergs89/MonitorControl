@@ -28,6 +28,7 @@
 		7B836E9C2D79B10C00D5D620 /* ModernSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 7B836E9B2D79B10C00D5D620 /* ModernSlider */; };
 		7B836ECC2D79BA6100D5D620 /* SliderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B836ECB2D79BA6100D5D620 /* SliderHandler.swift */; };
 		7BFC61932D7B2446003FE023 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFC61922D7B2446003FE023 /* LaunchAtLogin */; };
+		7BFC61962D7B4122003FE023 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFC61952D7B4122003FE023 /* Settings */; };
 		8C1741852707B91100E88D53 /* InternetAccessPolicy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1741842707B91100E88D53 /* InternetAccessPolicy.plist */; };
 		8C1741882707B91F00E88D53 /* InternetAccessPolicy.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C17418A2707B91F00E88D53 /* InternetAccessPolicy.strings */; };
 		AA062E8A26C9A039007E628C /* DisplaysPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA062E8926C9A039007E628C /* DisplaysPrefsViewController.swift */; };
@@ -39,7 +40,6 @@
 		AA473EB126DFF8DE0063A181 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA473EB026DFF8DE0063A181 /* Command.swift */; };
 		AA5314C426EBF5170041D178 /* PrefKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5314C326EBF5170041D178 /* PrefKey.swift */; };
 		AA665A5D26C5892800FEF2C1 /* AboutPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665A5C26C5892800FEF2C1 /* AboutPrefsViewController.swift */; };
-		AA70817C27046B9800CC5625 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = AA70817B27046B9800CC5625 /* Sparkle */; };
 		AA99521726FE25AB00612E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99521626FE25AB00612E07 /* AppDelegate.swift */; };
 		AA99521926FE49A300612E07 /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA99521826FE49A300612E07 /* MenuHandler.swift */; };
 		AA9AE86F26B5BF3D00B6CA65 /* OSD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9AE86E26B5BF3D00B6CA65 /* OSD.framework */; };
@@ -52,7 +52,6 @@
 		AAB2F642273ED0C7004AB5A4 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = AAB2F641273ED0C7004AB5A4 /* .github */; };
 		AAB2F644273ED0E9004AB5A4 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAB2F643273ED0E9004AB5A4 /* License.txt */; };
 		AACE5E2327050C63006C2A48 /* NSNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE5E2227050C63006C2A48 /* NSNotification+Extension.swift */; };
-		AAD7DD342CAFF3D90062822F /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = AAD7DD332CAFF3D90062822F /* Settings */; };
 		AADB625A26BC196900DFFAA5 /* DisplayServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADB625926BC196900DFFAA5 /* DisplayServices.framework */; };
 		F01B0699228221B7008E64DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F01B0680228221B6008E64DB /* Localizable.strings */; };
 		F03A8DF21FFBAA6F0034DC27 /* OtherDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A8DF11FFBAA6F0034DC27 /* OtherDisplay.swift */; };
@@ -108,6 +107,12 @@
 		7B836E942D79A48200D5D620 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B836E982D79A89200D5D620 /* Vars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		7B836ECB2D79BA6100D5D620 /* SliderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHandler.swift; sourceTree = "<group>"; };
+		7BFC61972D7B4355003FE023 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
+		7BFC61982D7B4355003FE023 /* DDCControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCControl.swift; sourceTree = "<group>"; };
+		7BFC61992D7B4355003FE023 /* AppleNativeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleNativeControl.swift; sourceTree = "<group>"; };
+		7BFC619A2D7B4355003FE023 /* GammaControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GammaControl.swift; sourceTree = "<group>"; };
+		7BFC619B2D7B4355003FE023 /* NetworkControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControl.swift; sourceTree = "<group>"; };
+		7BFC619C2D7B4355003FE023 /* DDCCTLControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCCTLControl.swift; sourceTree = "<group>"; };
 		8C1741842707B91100E88D53 /* InternetAccessPolicy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InternetAccessPolicy.plist; sourceTree = "<group>"; };
 		8C1741892707B91F00E88D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
 		8C17418B2707B92200E88D53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InternetAccessPolicy.strings"; sourceTree = "<group>"; };
@@ -196,10 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA9AE87126B5BFB700B6CA65 /* CoreDisplay.framework in Frameworks */,
-				AA70817C27046B9800CC5625 /* Sparkle in Frameworks */,
 				AA9AE86F26B5BF3D00B6CA65 /* OSD.framework in Frameworks */,
 				7B836E9C2D79B10C00D5D620 /* ModernSlider in Frameworks */,
-				AAD7DD342CAFF3D90062822F /* Settings in Frameworks */,
+				7BFC61962D7B4122003FE023 /* Settings in Frameworks */,
 				7BFC61932D7B2446003FE023 /* LaunchAtLogin in Frameworks */,
 				AADB625A26BC196900DFFAA5 /* DisplayServices.framework in Frameworks */,
 			);
@@ -279,6 +283,7 @@
 				28D1DDEB227FB8E9004CB494 /* Extensions */,
 				F01B0687228221B6008E64DB /* UI */,
 				F0445D3620023D5B0025AE82 /* View Controllers */,
+				7BFC619D2D7B4355003FE023 /* Control */,
 			);
 			path = MonitorControl;
 			sourceTree = "<group>";
@@ -291,6 +296,19 @@
 				F03A8DF11FFBAA6F0034DC27 /* OtherDisplay.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7BFC619D2D7B4355003FE023 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				7BFC61972D7B4355003FE023 /* Control.swift */,
+				7BFC61982D7B4355003FE023 /* DDCControl.swift */,
+				7BFC61992D7B4355003FE023 /* AppleNativeControl.swift */,
+				7BFC619A2D7B4355003FE023 /* GammaControl.swift */,
+				7BFC619B2D7B4355003FE023 /* NetworkControl.swift */,
+				7BFC619C2D7B4355003FE023 /* DDCCTLControl.swift */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 		AA9D231226EE0B25007E22E7 /* Enums */ = {
@@ -402,10 +420,9 @@
 			);
 			name = MonitorControl;
 			packageProductDependencies = (
-				AA70817B27046B9800CC5625 /* Sparkle */,
-				AAD7DD332CAFF3D90062822F /* Settings */,
 				7B836E9B2D79B10C00D5D620 /* ModernSlider */,
 				7BFC61922D7B2446003FE023 /* LaunchAtLogin */,
+				7BFC61952D7B4122003FE023 /* Settings */,
 			);
 			productName = MonitorControl.OSX;
 			productReference = 56754EAB1D9A4016007BCDC5 /* MonitorControl.app */;
@@ -481,10 +498,9 @@
 			);
 			mainGroup = 56754EA21D9A4016007BCDC5;
 			packageReferences = (
-				6CD35F5A2650003F001F1344 /* XCRemoteSwiftPackageReference "Settings" */,
-				AA70817A27046B9800CC5625 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				7B836E9A2D79B10C00D5D620 /* XCRemoteSwiftPackageReference "ModernSlider" */,
 				7BFC61912D7B2446003FE023 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+				7BFC61942D7B4122003FE023 /* XCRemoteSwiftPackageReference "Settings" */,
 			);
 			productRefGroup = 56754EAC1D9A4016007BCDC5 /* Products */;
 			projectDirPath = "";
@@ -879,7 +895,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7100;
+				CURRENT_PROJECT_VERSION = 01;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SX6MJ2YSN9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -889,14 +905,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MonitorControl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AllBright;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 4.3.2;
-				PRODUCT_BUNDLE_IDENTIFIER = app.monitorcontrol.MonitorControl;
+				MARKETING_VERSION = 0.9b1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.AllBright;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitorControl/Support/Bridging-Header.h";
@@ -918,7 +935,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7100;
+				CURRENT_PROJECT_VERSION = 01;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SX6MJ2YSN9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -928,14 +945,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MonitorControl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AllBright;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 4.3.2;
-				PRODUCT_BUNDLE_IDENTIFIER = app.monitorcontrol.MonitorControl;
+				MARKETING_VERSION = 0.9b1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.AllBright;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitorControl/Support/Bridging-Header.h";
@@ -960,19 +978,20 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7100;
+				CURRENT_PROJECT_VERSION = 01;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SX6MJ2YSN9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MonitorControlHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AllBright;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 4.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.monitorcontrol.MonitorControlHelper;
+				MARKETING_VERSION = 0.9b1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.AllBrightHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.5;
@@ -991,19 +1010,20 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7100;
+				CURRENT_PROJECT_VERSION = 01;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SX6MJ2YSN9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MonitorControlHelper/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AllBright;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 4.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.monitorcontrol.MonitorControlHelper;
+				MARKETING_VERSION = 0.9b1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.AllBrightHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.5;
@@ -1043,14 +1063,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6CD35F5A2650003F001F1344 /* XCRemoteSwiftPackageReference "Settings" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/Settings";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		7B836E9A2D79B10C00D5D620 /* XCRemoteSwiftPackageReference "ModernSlider" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/arjun-dureja/ModernSlider";
@@ -1067,12 +1079,12 @@
 				kind = branch;
 			};
 		};
-		AA70817A27046B9800CC5625 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+		7BFC61942D7B4122003FE023 /* XCRemoteSwiftPackageReference "Settings" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			repositoryURL = "https://github.com/sindresorhus/Settings";
 			requirement = {
-				branch = 2.x;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1088,14 +1100,9 @@
 			package = 7BFC61912D7B2446003FE023 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
 		};
-		AA70817B27046B9800CC5625 /* Sparkle */ = {
+		7BFC61952D7B4122003FE023 /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA70817A27046B9800CC5625 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-		AAD7DD332CAFF3D90062822F /* Settings */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6CD35F5A2650003F001F1344 /* XCRemoteSwiftPackageReference "Settings" */;
+			package = 7BFC61942D7B4122003FE023 /* XCRemoteSwiftPackageReference "Settings" */;
 			productName = Settings;
 		};
 /* End XCSwiftPackageProductDependency section */

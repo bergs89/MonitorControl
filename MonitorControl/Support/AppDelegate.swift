@@ -2,7 +2,6 @@
 
 import AVFoundation
 import Cocoa
-import Foundation
 import os.log
 import ServiceManagement
 import Settings

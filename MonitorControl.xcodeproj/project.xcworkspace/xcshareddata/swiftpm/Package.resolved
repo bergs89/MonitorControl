@@ -1,5 +1,5 @@
 {
-  "originHash" : "be7425e5d13ea56f9690d2cb06466a03e3f077444613e2fce0dcb120ea107a79",
+  "originHash" : "d36447066436f4ad8a74bbdfcc560aa813f424ce66173a49ac64fce7f24209ea",
   "pins" : [
     {
       "identity" : "launchatlogin-modern",
@@ -24,17 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sindresorhus/Settings",
       "state" : {
-        "branch" : "main",
-        "revision" : "879ea83a7bbc6dbebf62bed8c547f090146372a6"
-      }
-    },
-    {
-      "identity" : "sparkle",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sparkle-project/Sparkle",
-      "state" : {
-        "branch" : "2.x",
-        "revision" : "9042c8dbd9c6f6a1bebc2e4c4b878eac6984ddbd"
+        "revision" : "879ea83a7bbc6dbebf62bed8c547f090146372a6",
+        "version" : "3.1.1"
       }
     }
   ],
