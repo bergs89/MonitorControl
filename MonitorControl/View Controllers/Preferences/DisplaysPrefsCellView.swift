@@ -118,7 +118,6 @@ class DisplaysPrefsCellView: NSTableCellView {
         if let window = self.window {
           alert.beginSheetModal(for: window, completionHandler: { modalResponse in
             if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {
-              app.setStartAtLogin(enabled: false)
               display.savePref(true, key: .longerDelay)
             } else {
               sender.state = .off
@@ -228,13 +227,6 @@ class DisplaysPrefsCellView: NSTableCellView {
       display.savePref(sender.stringValue, key: .audioDeviceNameOverride)
     }
     app.configure()
-  }
-
-  @IBAction func updateWithCurrentAudioName(_: NSButton) {
-    if let defaultDevice = app.coreAudio.defaultOutputDevice {
-      self.audioDeviceNameOverride.stringValue = defaultDevice.name
-      self.audioDeviceNameOverride(self.audioDeviceNameOverride)
-    }
   }
 
   @IBAction func unavailableDDC(_ sender: NSButton) {

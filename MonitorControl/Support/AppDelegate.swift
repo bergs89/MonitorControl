@@ -6,8 +6,6 @@ import Foundation
 import os.log
 import ServiceManagement
 import Settings
-import SimplyCoreAudio
-import Sparkle
 import LaunchAtLogin
 
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,7 +14,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     item.behavior = .removalAllowed
     return item
   }()
-  let coreAudio = SimplyCoreAudio()
   var accessibilityObserver: NSObjectProtocol!
   var statusItemObserver: NSObjectProtocol!
   var statusItemVisibilityChangedByUser = true
@@ -100,7 +97,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     DisplayManager.shared.resetSwBrightnessForAllDisplays(noPrefSave: true)
     CGDisplayRestoreColorSyncSettings()
     self.reconfigureID += 1
-    // self.updateMediaKeyTap()
     os_log("Bumping reconfigureID to %{public}@", type: .info, String(self.reconfigureID))
     _ = DisplayManager.shared.destroyAllShades()
     if self.sleepID == 0 {
@@ -137,17 +133,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func updateMenusAndKeys() {
     menu.updateMenus()
-    // self.updateMediaKeyTap()
-  }
-
-  func checkPermissions(firstAsk: Bool = false) {
-    let permissionsRequired: Bool = [KeyboardVolume.media.rawValue, KeyboardVolume.both.rawValue].contains(prefs.integer(forKey: PrefKey.keyboardVolume.rawValue)) || [KeyboardBrightness.media.rawValue, KeyboardBrightness.both.rawValue].contains(prefs.integer(forKey: PrefKey.keyboardBrightness.rawValue))
-    //if !MediaKeyTapManager.readPrivileges(prompt: false), permissionsRequired {
-    //  MediaKeyTapManager.acquirePrivileges(firstAsk: firstAsk)
   }
 
   private func subscribeEventListeners() {
-    NotificationCenter.default.addObserver(self, selector: #selector(self.audioDeviceChanged), name: Notification.Name.defaultOutputDeviceChanged, object: nil) // subscribe Audio output detector (SimplyCoreAudio)
     DistributedNotificationCenter.default.addObserver(self, selector: #selector(self.displayReconfigured), name: NSNotification.Name(rawValue: kColorSyncDisplayDeviceProfilesNotification.takeRetainedValue() as String), object: nil) // ColorSync change
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.sleepNotification), name: NSWorkspace.screensDidSleepNotification, object: nil) // sleep and wake listeners
     NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(self.wakeNotification), name: NSWorkspace.screensDidWakeNotification, object: nil)
@@ -159,7 +147,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @objc private func sleepNotification() {
     self.sleepID += 1
     os_log("Sleeping with sleep %{public}@", type: .info, String(self.sleepID))
-    //self.updateMediaKeyTap()
   }
 
   @objc private func wakeNotification() {
@@ -186,7 +173,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.job(start: true)
       }
       self.startupActionWriteRepeatAfterSober()
-      //self.updateMediaKeyTap()
     }
   }
 
@@ -241,12 +227,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       os_log("MonitorControl job died because of sleep or reconfiguration.", type: .info)
     }
   }
-
-  func handleListenForChanged() {
-    self.checkPermissions()
-    // self.updateMediaKeyTap()
-  }
-
+  
   func settingsReset() {
     os_log("Resetting all settings.")
     if !prefs.bool(forKey: PrefKey.disableCombinedBrightness.rawValue) {
@@ -257,29 +238,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     app.updateStatusItemVisibility(true)
     self.setDefaultPrefs()
-    self.checkPermissions()
-    // self.updateMediaKeyTap()
     self.configure(firstrun: true)
   }
-
-  @objc func audioDeviceChanged() {
-    if let defaultDevice = self.coreAudio.defaultOutputDevice {
-      os_log("Default output device changed to “%{public}@”.", type: .info, defaultDevice.name)
-      os_log("Can device set its own volume? %{public}@", type: .info, defaultDevice.canSetVirtualMainVolume(scope: .output).description)
-    }
-    // self.updateMediaKeyTap()
-  }
-
-  func updateMediaKeyTap() {
-    // MediaKeyTap.useAlternateBrightnessKeys = !prefs.bool(forKey: PrefKey.disableAltBrightnessKeys.rawValue)
-      // self.mediaKeyTap.updateMediaKeyTap()
-  }
-
-  func setStartAtLogin(enabled: Bool) {
-    let identifier = "\(Bundle.main.bundleIdentifier!)Helper" as CFString
-    SMLoginItemSetEnabled(identifier, enabled)
-  }
-
+  
   func getSystemSettings() -> [String: AnyObject]? {
     var propertyListFormat = PropertyListSerialization.PropertyListFormat.xml
     let plistPath = NSString(string: "~/Library/Preferences/.GlobalPreferences.plist").expandingTildeInPath
@@ -299,19 +260,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       return false
     } else {
       return true
-    }
-  }
-
-  func playVolumeChangedSound() {
-    guard let settings = app.getSystemSettings(), let hasSoundEnabled = settings["com.apple.sound.beep.feedback"] as? Int, hasSoundEnabled == 1 else {
-      return
-    }
-    do {
-      self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: "/System/Library/LoginPlugins/BezelServices.loginPlugin/Contents/Resources/volume.aiff"))
-      self.audioPlayer?.volume = 1
-      self.audioPlayer?.play()
-    } catch {
-      os_log("%{public}@", type: .error, error.localizedDescription)
     }
   }
 

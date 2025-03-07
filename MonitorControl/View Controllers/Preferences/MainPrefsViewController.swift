@@ -68,16 +68,6 @@ class MainPrefsViewController: NSViewController, SettingsPane {
     self.updateGridLayout()
   }
 
-  @IBAction func startAtLoginClicked(_ sender: NSButton) {
-    switch sender.state {
-    case .on:
-      app.setStartAtLogin(enabled: true)
-    case .off:
-      app.setStartAtLogin(enabled: false)
-    default: break
-    }
-  }
-
   @IBAction func automaticUpdateCheck(_ sender: NSButton) {
     switch sender.state {
     case .on:
