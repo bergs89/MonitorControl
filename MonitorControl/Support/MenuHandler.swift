@@ -2,6 +2,7 @@ import AppKit
 import SwiftUI
 import ModernSlider
 import os.log
+import LaunchAtLogin
 
 // MARK: - ExtraBrightnessSliderView
 /// A SwiftUI view using ModernSlider for extra brightness.
@@ -147,9 +148,6 @@ class MenuHandler: NSMenu, NSMenuDelegate {
                 }
                 self.updateDisplayMenu(display: display, asSubMenu: asSubMenu, numOfDisplays: numOfDisplays)
             }
-            if combine {
-                self.addCombinedDisplayMenuBlock()
-            }
         }
         
         // ----- Add Extra Brightness (using SwiftUI & ModernSlider) -----
@@ -210,18 +208,6 @@ class MenuHandler: NSMenu, NSMenuDelegate {
         }
     }
     
-    func addCombinedDisplayMenuBlock() {
-        if let sliderHandler = self.combinedSliderHandler[.audioSpeakerVolume] {
-            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
-        }
-        if let sliderHandler = self.combinedSliderHandler[.contrast] {
-            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
-        }
-        if let sliderHandler = self.combinedSliderHandler[.brightness] {
-            self.addSliderItem(monitorSubMenu: self, sliderHandler: sliderHandler)
-        }
-    }
-    
     func addSliderItem(monitorSubMenu: NSMenu, sliderHandler: SliderHandler) {
         let item = NSMenuItem()
         item.view = sliderHandler.view
@@ -231,22 +217,6 @@ class MenuHandler: NSMenu, NSMenuDelegate {
             let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.systemGray, .font: NSFont.systemFont(ofSize: 12)]
             sliderHeaderItem.attributedTitle = NSAttributedString(string: sliderHandler.title, attributes: attrs)
             monitorSubMenu.insertItem(sliderHeaderItem, at: 0)
-        }
-    }
-    
-    func setupMenuSliderHandler(command: Command, display: Display, title: String) -> SliderHandler {
-        if prefs.integer(forKey: PrefKey.multiSliders.rawValue) == MultiSliders.combine.rawValue,
-           let combinedHandler = self.combinedSliderHandler[command] {
-            combinedHandler.addDisplay(display)
-            display.sliderHandler[command] = combinedHandler
-            return combinedHandler
-        } else {
-            let sliderHandler = SliderHandler(display: display, command: command, title: title)
-            if prefs.integer(forKey: PrefKey.multiSliders.rawValue) == MultiSliders.combine.rawValue {
-                self.combinedSliderHandler[command] = sliderHandler
-            }
-            display.sliderHandler[command] = sliderHandler
-            return sliderHandler
         }
     }
     
@@ -357,12 +327,14 @@ class MenuHandler: NSMenu, NSMenuDelegate {
                          keyEquivalent: "",
                         at: self.items.count)
       
-        self.insertItem(withTitle: NSLocalizedString("Launch at Login", comment: "Shown in menu"),
-                        action: #selector(app.toggleLaunchAtLogin(_:)),
-                        keyEquivalent: "",
-                        at: self.items.count)
+        let launchItem = self.insertItem(withTitle: NSLocalizedString("Launch at Login", comment: "Shown in menu"),
+                                       action: #selector(toggleLaunchAtLogin(_:)),
+                                       keyEquivalent: "",
+                                       at: self.items.count)
+        launchItem.target = self
+        launchItem.state = LaunchAtLogin.isEnabled ? .on : .off
       
-      self.addItem(NSMenuItem.separator())
+        self.addItem(NSMenuItem.separator())
       
         self.insertItem(withTitle: NSLocalizedString("About", comment: "Shown in menu"),
                         action: #selector(app.showAbout(_:)),
@@ -374,4 +346,9 @@ class MenuHandler: NSMenu, NSMenuDelegate {
                         keyEquivalent: "q",
                         at: self.items.count)
     }
+  
+  @objc func toggleLaunchAtLogin(_ sender: NSMenuItem) {
+      LaunchAtLogin.isEnabled.toggle()
+      sender.state = LaunchAtLogin.isEnabled ? .on : .off
+  }
 }

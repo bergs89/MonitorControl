@@ -70,21 +70,6 @@ final class Vars {
         }
     }
     
-    public var launchAtLogin: Bool = false {
-        didSet {
-        let service = SMAppService.mainApp
-        do {
-                if launchAtLogin {
-                    try service.register()
-                } else {
-                    try service.unregister()
-                }
-            } catch {
-                launchAtLogin.toggle()
-            }
-            callListeners(setting: "launchAtLogin")
-        }
-    }
     
     private var listeners: [String: [()->()]] = [:]
   
@@ -98,11 +83,6 @@ final class Vars {
             UserDefaults.standard.set(naturalScrolling, forKey: "naturalScrolling")
             callListeners(setting: "naturalScrolling")
         }
-    }
-    
-    init() {
-        // Load launch at login status
-        launchAtLogin = SMAppService.mainApp.status == SMAppService.Status.enabled
     }
     
     public func addListener(setting: String, callback: @escaping () ->()) {

@@ -8,6 +8,7 @@ import ServiceManagement
 import Settings
 import SimplyCoreAudio
 import Sparkle
+import LaunchAtLogin
 
 class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem: NSStatusItem = {
@@ -349,13 +350,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     statusItemVisibilityChangedByUser = true
   }
   
-  @objc func toggleLaunchAtLogin(_ sender: NSMenuItem) {
-      // Toggle the launch at login property.
-      Vars.shared.launchAtLogin.toggle()
-      // Update the menu item checkmark to reflect the new state.
-      sender.state = Vars.shared.launchAtLogin ? .on : .off
-  }
-  
   @objc func showAbout(_ sender: Any?) {
       NSApp.orderFrontStandardAboutPanel(nil)
   }
@@ -370,4 +364,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           NSWorkspace.shared.open(url)
       }
   }
+  
+  
+  
 }
