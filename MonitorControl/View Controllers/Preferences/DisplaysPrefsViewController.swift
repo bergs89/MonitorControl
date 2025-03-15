@@ -60,7 +60,7 @@ class DisplaysPrefsViewController: NSViewController, SettingsPane, NSTableViewDa
     default: break
     }
     _ = self.updateGridLayout()
-    displaysPrefsVc?.view.layoutSubtreeIfNeeded()
+    // displaysPrefsVc?.view.layoutSubtreeIfNeeded()
   }
 
   func numberOfRows(in _: NSTableView) -> Int {

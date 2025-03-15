@@ -126,7 +126,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DisplayManager.shared.restoreSwBrightnessForAllDisplays(async: !prefs.bool(forKey: PrefKey.disableSmoothBrightness.rawValue))
       }
     }
-    displaysPrefsVc?.loadDisplayList()
+    // displaysPrefsVc?.loadDisplayList()
     self.job(start: true)
   }
 
