@@ -55,7 +55,7 @@
 		F01B0699228221B7008E64DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F01B0680228221B6008E64DB /* Localizable.strings */; };
 		F03A8DF21FFBAA6F0034DC27 /* OtherDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A8DF11FFBAA6F0034DC27 /* OtherDisplay.swift */; };
 		F06792EA200A73460066C438 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06792E9200A73460066C438 /* main.swift */; };
-		F06792F6200A745F0066C438 /* AllBrightHelper.app in [Login] Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = F06792E7200A73460066C438 /* AllBrightHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F06792F6200A745F0066C438 /* Scroll the LightHelper.app in [Login] Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = F06792E7200A73460066C438 /* Scroll the LightHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FE4E0896249D584C003A50BB /* OSDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E0895249D584C003A50BB /* OSDUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				F06792F6200A745F0066C438 /* AllBrightHelper.app in [Login] Copy Helper to start at Login */,
+				F06792F6200A745F0066C438 /* Scroll the LightHelper.app in [Login] Copy Helper to start at Login */,
 			);
 			name = "[Login] Copy Helper to start at Login";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,7 +84,7 @@
 		2FBCCED52853930200C06A13 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		2FBCCED62853930200C06A13 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InternetAccessPolicy.strings; sourceTree = "<group>"; };
 		2FBCCED72853930200C06A13 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		56754EAB1D9A4016007BCDC5 /* AllBright.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllBright.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56754EAB1D9A4016007BCDC5 /* Scroll the Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scroll the Light.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56754EAE1D9A4016007BCDC5 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = main.swift; sourceTree = "<group>"; };
 		56754EB01D9A4016007BCDC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C85EFD922C941B000227EA1 /* DisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
@@ -94,6 +94,7 @@
 		6CDA0FCE26485A8300F52125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CDA0FD026485AA100F52125 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6CF93A782707981300BA219D /* MonitorControlDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonitorControlDebug.entitlements; sourceTree = "<group>"; };
+		7B1260CC2D88726100EFAA81 /* Scroll the Light.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scroll the Light.entitlements"; sourceTree = "<group>"; };
 		7B836D682D7760EE00D5D620 /* BrightnessStatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessStatusItemView.swift; sourceTree = "<group>"; };
 		7B836D7C2D77793000D5D620 /* BrightnessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessModel.swift; sourceTree = "<group>"; };
 		7B836E032D79A26400D5D620 /* BrightnessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessManager.swift; sourceTree = "<group>"; };
@@ -179,7 +180,7 @@
 		F01B0685228221B6008E64DB /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F01B0686228221B6008E64DB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F03A8DF11FFBAA6F0034DC27 /* OtherDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDisplay.swift; sourceTree = "<group>"; };
-		F06792E7200A73460066C438 /* AllBrightHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllBrightHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F06792E7200A73460066C438 /* Scroll the LightHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scroll the LightHelper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06792E9200A73460066C438 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F06792F0200A73470066C438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F06792F1200A73470066C438 /* MonitorControlHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonitorControlHelper.entitlements; sourceTree = "<group>"; };
@@ -236,6 +237,7 @@
 		56754EA21D9A4016007BCDC5 = {
 			isa = PBXGroup;
 			children = (
+				7B1260CC2D88726100EFAA81 /* Scroll the Light.entitlements */,
 				AAB2F646273ED127004AB5A4 /* Misc */,
 				28D1DDD1227FB759004CB494 /* Frameworks */,
 				56754EAD1D9A4016007BCDC5 /* MonitorControl */,
@@ -248,8 +250,8 @@
 		56754EAC1D9A4016007BCDC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56754EAB1D9A4016007BCDC5 /* AllBright.app */,
-				F06792E7200A73460066C438 /* AllBrightHelper.app */,
+				56754EAB1D9A4016007BCDC5 /* Scroll the Light.app */,
+				F06792E7200A73460066C438 /* Scroll the LightHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -393,9 +395,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		56754EAA1D9A4016007BCDC5 /* AllBright */ = {
+		56754EAA1D9A4016007BCDC5 /* Scroll the Light */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56754EB81D9A4016007BCDC5 /* Build configuration list for PBXNativeTarget "AllBright" */;
+			buildConfigurationList = 56754EB81D9A4016007BCDC5 /* Build configuration list for PBXNativeTarget "Scroll the Light" */;
 			buildPhases = (
 				28D1DE0C227FCFAF004CB494 /* [Format] Run SwiftFormat */,
 				F03A8DF01FFB9D4C0034DC27 /* [Lint] Run SwiftLint */,
@@ -409,19 +411,19 @@
 			);
 			dependencies = (
 			);
-			name = AllBright;
+			name = "Scroll the Light";
 			packageProductDependencies = (
 				7B836E9B2D79B10C00D5D620 /* ModernSlider */,
 				7BFC61922D7B2446003FE023 /* LaunchAtLogin */,
 				7BFC61952D7B4122003FE023 /* Settings */,
 			);
 			productName = MonitorControl.OSX;
-			productReference = 56754EAB1D9A4016007BCDC5 /* AllBright.app */;
+			productReference = 56754EAB1D9A4016007BCDC5 /* Scroll the Light.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F06792E6200A73460066C438 /* AllBrightHelper */ = {
+		F06792E6200A73460066C438 /* Scroll the LightHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F06792F4200A73470066C438 /* Build configuration list for PBXNativeTarget "AllBrightHelper" */;
+			buildConfigurationList = F06792F4200A73470066C438 /* Build configuration list for PBXNativeTarget "Scroll the LightHelper" */;
 			buildPhases = (
 				F06792E3200A73460066C438 /* Sources */,
 				F06792E4200A73460066C438 /* Frameworks */,
@@ -433,9 +435,9 @@
 			);
 			dependencies = (
 			);
-			name = AllBrightHelper;
+			name = "Scroll the LightHelper";
 			productName = MonitorControlHelper;
-			productReference = F06792E7200A73460066C438 /* AllBrightHelper.app */;
+			productReference = F06792E7200A73460066C438 /* Scroll the LightHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -461,7 +463,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 56754EA61D9A4016007BCDC5 /* Build configuration list for PBXProject "AllBright" */;
+			buildConfigurationList = 56754EA61D9A4016007BCDC5 /* Build configuration list for PBXProject "Scroll the Light" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -497,8 +499,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				56754EAA1D9A4016007BCDC5 /* AllBright */,
-				F06792E6200A73460066C438 /* AllBrightHelper */,
+				56754EAA1D9A4016007BCDC5 /* Scroll the Light */,
+				F06792E6200A73460066C438 /* Scroll the LightHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -883,7 +885,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 01;
+				CURRENT_PROJECT_VERSION = 8000;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SX6MJ2YSN9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -893,15 +895,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MonitorControl/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AllBright;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scroll the Light";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 0.9b1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.AllBright;
+				MARKETING_VERSION = 0.9.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.ScrolltheLight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitorControl/Support/Bridging-Header.h";
@@ -919,11 +921,12 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Scroll the Light.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 01;
+				CURRENT_PROJECT_VERSION = 8000;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SX6MJ2YSN9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -933,15 +936,15 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MonitorControl/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AllBright;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scroll the Light";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 0.9b1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.AllBright;
+				MARKETING_VERSION = 0.9.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanoBergamini.ScrolltheLight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonitorControl/Support/Bridging-Header.h";
@@ -1021,7 +1024,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		56754EA61D9A4016007BCDC5 /* Build configuration list for PBXProject "AllBright" */ = {
+		56754EA61D9A4016007BCDC5 /* Build configuration list for PBXProject "Scroll the Light" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56754EB61D9A4016007BCDC5 /* Debug */,
@@ -1030,7 +1033,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56754EB81D9A4016007BCDC5 /* Build configuration list for PBXNativeTarget "AllBright" */ = {
+		56754EB81D9A4016007BCDC5 /* Build configuration list for PBXNativeTarget "Scroll the Light" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56754EB91D9A4016007BCDC5 /* Debug */,
@@ -1039,7 +1042,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F06792F4200A73470066C438 /* Build configuration list for PBXNativeTarget "AllBrightHelper" */ = {
+		F06792F4200A73470066C438 /* Build configuration list for PBXNativeTarget "Scroll the LightHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F06792F2200A73470066C438 /* Debug */,

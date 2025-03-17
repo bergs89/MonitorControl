@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "56754EAA1D9A4016007BCDC5"
-               BuildableName = "AllBright.app"
-               BlueprintName = "AllBright"
-               ReferencedContainer = "container:AllBright.xcodeproj">
+               BuildableName = "Scroll the Light.app"
+               BlueprintName = "Scroll the Light"
+               ReferencedContainer = "container:Scroll the Light.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56754EAA1D9A4016007BCDC5"
-            BuildableName = "AllBright.app"
-            BlueprintName = "AllBright"
-            ReferencedContainer = "container:AllBright.xcodeproj">
+            BuildableName = "Scroll the Light.app"
+            BlueprintName = "Scroll the Light"
+            ReferencedContainer = "container:Scroll the Light.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56754EAA1D9A4016007BCDC5"
-            BuildableName = "AllBright.app"
-            BlueprintName = "AllBright"
-            ReferencedContainer = "container:AllBright.xcodeproj">
+            BuildableName = "Scroll the Light.app"
+            BlueprintName = "Scroll the Light"
+            ReferencedContainer = "container:Scroll the Light.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56754EAA1D9A4016007BCDC5"
-            BuildableName = "AllBright.app"
-            BlueprintName = "AllBright"
-            ReferencedContainer = "container:AllBright.xcodeproj">
+            BuildableName = "Scroll the Light.app"
+            BlueprintName = "Scroll the Light"
+            ReferencedContainer = "container:Scroll the Light.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -82,6 +82,8 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      revealArchiveInOrganizer = "YES">
+      customArchiveName = "Scroll the Light"
+      revealArchiveInOrganizer = "YES"
+      allowsArchivingForSimulator = "YES">
    </ArchiveAction>
 </Scheme>

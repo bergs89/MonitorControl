@@ -5,9 +5,7 @@
 	<key>ApplicationDescription</key>
 	<string>ApplicationDescription</string>
 	<key>DeveloperName</key>
-	<string>MonitorControl</string>
-	<key>Website</key>
-	<string>https://monitorcontrol.app</string>
+	<string>Stefano Bergamini</string>
 	<key>Connections</key>
 	<array>
 		<dict>
