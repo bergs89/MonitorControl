@@ -5,8 +5,7 @@
 //  Created by Niklas Rousset on 22.09.23.
 //
 
-import Carbon
-import SwiftUI
+import Foundation
 
 struct BrightIntoshUrls {
     static let web = URL(string: "https://brightintosh.de")!

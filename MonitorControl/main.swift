@@ -21,11 +21,8 @@ let prefs = UserDefaults.standard
 
 // Views
 private let storyboard = NSStoryboard(name: "Main", bundle: Bundle.main)
-// let mainPrefsVc = storyboard.instantiateController(withIdentifier: "MainPrefsVC") as? MainPrefsViewController
 let displaysPrefsVc = storyboard.instantiateController(withIdentifier: "DisplaysPrefsVC") as? DisplaysPrefsViewController
 let menuslidersPrefsVc = storyboard.instantiateController(withIdentifier: "MenuslidersPrefsVC") as? MenuslidersPrefsViewController
-// let aboutPrefsVc = storyboard.instantiateController(withIdentifier: "AboutPrefsVC") as? AboutPrefsViewController
-// let onboardingVc = storyboard.instantiateController(withIdentifier: "onboardingViewController") as? NSWindowController
 
 autoreleasepool { () in
   let mc = NSApplication.shared

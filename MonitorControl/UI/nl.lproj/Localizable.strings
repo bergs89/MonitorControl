@@ -152,3 +152,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "U moet MonitorControl inschakelen in Systeemvoorkeuren > Beveiliging en Privacy > Privacy > Toegankelijkheid inschakelen, zodat de sneltoetsen werken.";
+
+/* Shown in menu */
+"Boost" = "Versterken";
+
+/* Open Display Settings */
+"Displays Settings..." = "Beeldscherm Instellingen...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "Natuurlijk Scrollen";
+
+/* Shown in menu */
+"Launch at Login" = "Start bij Inloggen";

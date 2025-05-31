@@ -1,6 +1,5 @@
 //  Copyright © MonitorControl. @JoniVR, @theOneyouseek, @waydabber and others
 
-import AVFoundation
 import Cocoa
 import Foundation
 import os.log
@@ -22,7 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var safeMode = false
   var jobRunning = false
   var startupActionWriteCounter: Int = 0
-  var audioPlayer: AVAudioPlayer?
 
   var brightnessManager: BrightnessManager?
   
@@ -39,9 +37,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     self.configure(firstrun: true)
     DisplayManager.shared.createGammaActivityEnforcer()
     
-    //if #available(macOS 10.15, *) {
-      //let brightnessModel = BrightnessModel()
-    //}
     // Initialize your brightness manager (using your modified BrightIntosh version)
     brightnessManager = BrightnessManager(isExtraBrightnessAllowed: { _ in return true })
     

@@ -150,3 +150,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "Abyste mohli používat klávesové zkratky, jděte do Předvoleb systému > Zabezpečení a soukromí > Zpřístupnění a tam zaškrtněte MonitorControl";
+
+/* Shown in menu */
+"Boost" = "Zesílení";
+
+/* Open Display Settings */
+"Displays Settings..." = "Nastavení Displejů...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "Přirozené Rolování";
+
+/* Shown in menu */
+"Launch at Login" = "Spustit při Přihlášení";

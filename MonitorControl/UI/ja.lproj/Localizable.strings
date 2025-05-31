@@ -150,3 +150,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "キーボードショートカットを機能させるには、システム環境設定 > セキュリティとプライバシー > アクセシビリティ で MonitorControl を有効にする必要があります。";
+
+/* Shown in menu */
+"Boost" = "ブースト";
+
+/* Open Display Settings */
+"Displays Settings..." = "ディスプレイ設定...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "ナチュラルスクロール";
+
+/* Shown in menu */
+"Launch at Login" = "ログイン時に起動";

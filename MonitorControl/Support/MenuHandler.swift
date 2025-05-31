@@ -13,7 +13,7 @@ struct ExtraBrightnessSliderView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Boost")
+            Text(NSLocalizedString("Boost", comment: "Shown in menu"))
               .font(.system(size: 13, weight: .bold))
               .foregroundColor(.primary)
               .frame(maxWidth: .infinity, alignment: .leading)

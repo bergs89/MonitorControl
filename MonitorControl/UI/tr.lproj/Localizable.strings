@@ -150,3 +150,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "MonitorControl klavye kısayollarını aktif hale getirmek için Sistem Tercihleri > Güvenlik ve Gizlilik > Erişebilirlik altından izin vermeniz gerekmektedir";
+
+/* Shown in menu */
+"Boost" = "Güçlendir";
+
+/* Open Display Settings */
+"Displays Settings..." = "Ekran Ayarları...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "Doğal Kaydırma";
+
+/* Shown in menu */
+"Launch at Login" = "Giriş Yaparken Başlat";

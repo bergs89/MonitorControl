@@ -152,3 +152,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "Du musst MonitorControl in Systemeinstellungen > Sicherheit > Datenschutz > Bedienungshilfen aktivieren, damit die Kurzbefehle funktionieren.";
+
+/* Shown in menu */
+"Boost" = "Boost";
+
+/* Open Display Settings */
+"Displays Settings..." = "Monitor-Einstellungen...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "Natürliches Scrollen";
+
+/* Shown in menu */
+"Launch at Login" = "Bei Anmeldung starten";

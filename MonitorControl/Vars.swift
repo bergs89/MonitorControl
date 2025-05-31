@@ -12,7 +12,6 @@ import ServiceManagement
 final class Vars {
     static let shared: Vars = Vars()
     
-    public var ignoreAppTransaction = false
     
     public var brightintoshActive: Bool = UserDefaults.standard.object(forKey: "active") != nil ? UserDefaults.standard.bool(forKey: "active") : true {
         didSet {
@@ -28,45 +27,10 @@ final class Vars {
         }
     }
     
-    public var hideMenuBarItem: Bool = UserDefaults.standard.object(forKey: "hideMenuBarItem") != nil ? UserDefaults.standard.bool(forKey: "hideMenuBarItem") : false {
-        didSet {
-            UserDefaults.standard.setValue(hideMenuBarItem, forKey: "hideMenuBarItem")
-            callListeners(setting: "hideMenuBarItem")
-        }
-    }
-
     public var brightness: Float = UserDefaults.standard.object(forKey: "brightness") != nil ? UserDefaults.standard.float(forKey: "brightness") : getDeviceMaxBrightness() {
         didSet {
             UserDefaults.standard.setValue(brightness, forKey: "brightness")
             callListeners(setting: "brightness")
-        }
-    }
-    
-    public var batteryAutomation: Bool = UserDefaults.standard.object(forKey: "batteryAutomation") != nil ? UserDefaults.standard.bool(forKey: "batteryAutomation") : false {
-        didSet {
-            UserDefaults.standard.setValue(batteryAutomation, forKey: "batteryAutomation")
-            callListeners(setting: "batteryAutomation")
-        }
-    }
-    
-    public var batteryAutomationThreshold: Int = UserDefaults.standard.object(forKey: "batteryAutomationThreshold") != nil ? UserDefaults.standard.integer(forKey: "batteryAutomationThreshold") : 50 {
-        didSet {
-            UserDefaults.standard.setValue(batteryAutomationThreshold, forKey: "batteryAutomationThreshold")
-            callListeners(setting: "batteryAutomationThreshold")
-        }
-    }
-    
-    public var timerAutomation: Bool = UserDefaults.standard.object(forKey: "timerAutomation") != nil ? UserDefaults.standard.bool(forKey: "timerAutomation") : false {
-        didSet {
-            UserDefaults.standard.setValue(timerAutomation, forKey: "timerAutomation")
-            callListeners(setting: "timerAutomation")
-        }
-    }
-    
-    public var timerAutomationTimeout: Int = UserDefaults.standard.object(forKey: "timerAutomationTimeout") != nil ? UserDefaults.standard.integer(forKey: "timerAutomationTimeout") : 180 {
-        didSet {
-            UserDefaults.standard.setValue(timerAutomationTimeout, forKey: "timerAutomationTimeout")
-            callListeners(setting: "timerAutomationTimeout")
         }
     }
     

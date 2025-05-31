@@ -150,3 +150,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "आपको सिस्टम प्राथमिकताओं> सुरक्षा और गोपनीयता> में मॉनिटरकंट्रोल को सक्षम करने की आवश्यकता है कीबोर्ड शॉर्टकट के काम करने के लिए सुलभता";
+
+/* Shown in menu */
+"Boost" = "बूस्ट";
+
+/* Open Display Settings */
+"Displays Settings..." = "डिस्प्ले सेटिंग्स...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "प्राकृतिक स्क्रॉलिंग";
+
+/* Shown in menu */
+"Launch at Login" = "लॉगिन पर लॉन्च करें";

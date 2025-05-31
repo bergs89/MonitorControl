@@ -150,3 +150,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work";
+
+/* Shown in menu */
+"Boost" = "Boost";
+
+/* Open Display Settings */
+"Displays Settings..." = "Displays Settings...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "Natural Scrolling";
+
+/* Shown in menu */
+"Launch at Login" = "Launch at Login";

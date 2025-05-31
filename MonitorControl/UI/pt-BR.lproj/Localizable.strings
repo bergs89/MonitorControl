@@ -150,3 +150,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "Você precisa habilitar o MonitorControl nas Preferências do Sistema > Segurança e privacidade > Acessibilidade para que os atalhos de teclado funcionem";
+
+/* Shown in menu */
+"Boost" = "Amplificar";
+
+/* Open Display Settings */
+"Displays Settings..." = "Configurações do Monitor...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "Rolagem Natural";
+
+/* Shown in menu */
+"Launch at Login" = "Iniciar no Login";

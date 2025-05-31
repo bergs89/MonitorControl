@@ -150,3 +150,15 @@
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Settings > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "Вам необходимо включить MonitorControl, перейдите в Системные настройки > Конфиденциальность и безопасность > Универсальный доступ, чтобы сочетания клавиш работали";
+
+/* Shown in menu */
+"Boost" = "Усиление";
+
+/* Open Display Settings */
+"Displays Settings..." = "Настройки Мониторов...";
+
+/* Toggle natural scrolling for brightness adjustment */
+"Natural Scrolling" = "Естественная Прокрутка";
+
+/* Shown in menu */
+"Launch at Login" = "Запуск при Входе";
